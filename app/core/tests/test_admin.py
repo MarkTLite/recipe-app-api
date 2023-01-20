@@ -35,3 +35,10 @@ class AdminSiteTests(TestCase):
         res = self.client.get(url)
 
         self.assertEqual(res.status_code, 200)
+
+    def test_add_user(self):
+        """Test that admin add users page works due to custom user admin"""
+        url = reverse("admin:core_user_add")
+        res = self.client.get(url)
+
+        self.assertEqual(res.status_code, 200)
