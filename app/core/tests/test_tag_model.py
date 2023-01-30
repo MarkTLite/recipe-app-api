@@ -8,7 +8,10 @@ from core.models import Tag
 
 def create_user(email="user@example.com", password="testpass!@#"):
     """Helper to create and return user"""
-    return get_user_model().objects.create(email, password)
+    return get_user_model().objects.create(
+        email=email,
+        password=password,
+    )
 
 
 class TagModelTests(TestCase):
