@@ -11,20 +11,20 @@ from user.serializers import (
 
 
 class CreateUserView(generics.CreateAPIView):
-    """View that connects to the UserSerializer"""
+    """Creating a User"""
 
     serializer_class = UserSerializers
 
 
 class CreateAuthTokenView(ObtainAuthToken):
-    """View that Obtains the user auth token"""
+    """Obtains the user's auth token"""
 
     serializer_class = AuthTokenSerializer
     renderer_classes = api_settings.DEFAULT_RENDERER_CLASSES
 
 
 class ManageUserView(generics.RetrieveUpdateAPIView):
-    """View that manages the authenticated user"""
+    """Manages the authenticated user"""
 
     serializer_class = UserSerializers
     authentication_classes = [authentication.TokenAuthentication]
